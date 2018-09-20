@@ -1,2 +1,11 @@
 - started 2018-09-16 by pulling TheProject starting point from GitHub.
 - made basic UML diagram of what is given
+- began planning out the project in the UML diagram
+	- keep it simple: only squash for now
+	- required a bit of work to get into the "builder" pattern. difficult to understand
+	- also, a very complicated diagram. Made sure to use the correct arrows using UMLet.
+	- more specific variables and methods are added during coding. Enjoy the dynamic of actually doing things
+- continued on to define some things in the TheApp class
+	- set size to 16:9 relation
+	- changed mouseClicked to keyPressed, since I prefer keyboard controls
+	- turns out to be very simple to finish, since all of the logic is in other classes

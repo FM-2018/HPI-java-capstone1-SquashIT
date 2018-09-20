@@ -7,7 +7,7 @@ import processing.core.PApplet;
 
 public class TheApp extends PApplet {
 	
-	InteractiveComponent interactiveComponent; // we only got one component for now, so an array/list is not necessary
+	private InteractiveComponent interactiveComponent; // we only got one component for now, so an array/list is not necessary
 	
 	@Override
 	public void settings() {
@@ -16,7 +16,7 @@ public class TheApp extends PApplet {
 
 	@Override
 	public void setup() {  // setup() runs once
-		InteractiveComponentBuilder.create(this, "game");
+		interactiveComponent = InteractiveComponentBuilder.create(this, InteractiveComponentBuilder.GAME);
 	}
 
 	@Override

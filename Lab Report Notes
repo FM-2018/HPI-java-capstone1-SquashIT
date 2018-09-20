@@ -5,7 +5,19 @@
 	- required a bit of work to get into the "builder" pattern. difficult to understand
 	- also, a very complicated diagram. Made sure to use the correct arrows using UMLet.
 	- more specific variables and methods are added during coding. Enjoy the dynamic of actually doing things
+	- added a game class as an interactive component, as well as a few models with views and controllers
+	- game window is where the game actually takes place. May be useful to separate between actual window, because ball depot could be e.g. at the right side 
 - continued on to define some things in the TheApp class
 	- set size to 16:9 relation
 	- changed mouseClicked to keyPressed, since I prefer keyboard controls
 	- turns out to be very simple to finish, since all of the logic is in other classes
+- next: interactive component builder
+	- create game class with its planned methods first
+	- actually, next steps are very simple. Just call given build methods of game class
+	- String type parameter in builder confused me. I decided to settle for a constant instead that allows choosing the type. hex-Number is more or less random
+	- PROBLEM: variables declared in a switch case statement, or even in an if are obviously local. 
+		- thus, it can't be returned later on after exiting the switch-case statement.
+		- required to declare variable outside, but at that point the type is unknown
+		- therefore, use abstract class InteractiveComponent. But this lacks the methods, which leads to failure when putting a game into the variable
+		- SOLUTION: edit abstract class to force every descendant to have these methods
+	

@@ -4,7 +4,7 @@ import de.openhpi.capstone1.game.model.Paddle;
 
 public class PaddleControllerStrategyLeft implements Controller {
 	
-	public PaddleControllerStrategyLeft(Paddle paddle) {
+	public PaddleControllerStrategyLeft(Paddle paddle, int stepWidth) {
 		
 	}
 	

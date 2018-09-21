@@ -4,9 +4,11 @@ public class GameWindow extends PositionableElement {
 	private int width;
 	private int height;
 	
-	public GameWindow(int width, int height) {
+	public GameWindow(int x, int y, int width, int height) {
 		this.width = width;
 		this.height = height;
+		xPos = x;
+		yPos = y;
 	}
 	
 	public int getWidth() {

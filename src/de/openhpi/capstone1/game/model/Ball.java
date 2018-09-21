@@ -5,10 +5,10 @@ public class Ball extends PositionableElement {
 	public int velocityX;
 	public int velocityY;
 	
-	public Ball(int radius, int x, int y, int initialVelocityX, int initialVelocityY) {
-		this.radius = radius;
+	public Ball(int x, int y, int radius, int initialVelocityX, int initialVelocityY) {
 		xPos = x;
 		yPos = y;
+		this.radius = radius;
 		velocityX = initialVelocityX;
 		velocityY = initialVelocityY;
 	}

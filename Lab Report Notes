@@ -25,3 +25,6 @@
 	- many other classes from the model, view and controller have to be defined now. So that's what I do
 	- decided that floats in models are unnecessary. ints are precise enough for this coordinate system
 	- had to change a few variables along the way. as obvious, planning is not my thing. For instance, decided to add stepWidth variable for Paddle controllers
+	- finally able to implement build methods.
+	- decided to put constants at beginning to ease changing things and increase readability
+	- unfortunately, integers may cause imprecision of one pixel at a time. maybe change back to floats later on.

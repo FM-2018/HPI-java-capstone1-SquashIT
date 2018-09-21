@@ -1,12 +1,13 @@
 package de.openhpi.capstone1.game.view;
 
+import de.openhpi.capstone1.game.model.Paddle;
 import processing.core.PApplet;
 
-public class Paddle extends AbstractView {
+public class PaddleView extends AbstractView {
 	
 	private Paddle paddle;
 
-	public Paddle(PApplet display, Paddle model) {
+	public PaddleView(PApplet display, Paddle model) {
 		super(display);
 		this.paddle = model;
 	}

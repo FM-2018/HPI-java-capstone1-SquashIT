@@ -21,6 +21,7 @@ public class TheApp extends PApplet {
 
 	@Override
 	public void draw() {  // draw() loops forever, until stopped
+		background(180);
 		interactiveComponent.update();
 	}
 	

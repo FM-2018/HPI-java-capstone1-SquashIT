@@ -270,17 +270,17 @@ Paddle
     <coordinates>
       <x>1360</x>
       <y>880</y>
-      <w>450</w>
+      <w>480</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
-GameWindow
+GameField
 --
 // integers are precise enough
 - width: int
-- height: int
+- distanceWindowTop: int
 --
-+ GameWindow(width: int, height: int, xPos: int, yPos: int) &lt;&lt;constructor&gt;&gt;
++ GameWindow(width: int, distanceWindowTop: int, xPos: int) &lt;&lt;constructor&gt;&gt;
 + getWidth(): int
 + getHeight(): int</panel_attributes>
     <additional_attributes/>
@@ -310,7 +310,7 @@ BallView
       <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;class&gt;&gt;
-GameWindowView
+GameFieldView
 --
 --
 + GameWindowView(display: PApplet, gameWindow: GameWindow) &lt;&lt;constructor&gt;&gt;
@@ -406,15 +406,15 @@ r2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1800</x>
+      <x>1830</x>
       <y>880</y>
-      <w>160</w>
+      <w>130</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 r1=0..*
 r2=1</panel_attributes>
-    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -787,7 +787,7 @@ Game
 - paddleControlStratRight: PaddleControllerStrategyRight
 --
 // configs/options may be passed in here in the future
-+ Game() &lt;&lt;constructor&gt;&gt;</panel_attributes>
++ Game(display: Papplet) &lt;&lt;constructor&gt;&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -874,5 +874,16 @@ r2=0..1</panel_attributes>
     <panel_attributes>lt=-
 r2=0..1</panel_attributes>
     <additional_attributes>120.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1320</x>
+      <y>890</y>
+      <w>60</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0</additional_attributes>
   </element>
 </diagram>

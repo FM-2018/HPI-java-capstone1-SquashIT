@@ -12,7 +12,7 @@ public class InteractiveComponentBuilder {
 		
 		switch (type) {
 			case GAME:
-				component = new Game();
+				component = new Game(applet);
 				
 				component.buildModels();
 				component.buildViews(applet);

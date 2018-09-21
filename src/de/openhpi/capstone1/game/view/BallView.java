@@ -14,8 +14,10 @@ public class BallView extends AbstractView {
 	
 	@Override
 	public void update() {
-		// TODO Draw/Update ball
-
+		display.stroke(0);
+		display.fill(200);
+		
+		display.ellipse(ball.getX(), ball.getY(), ball.getRadius()*2, ball.getRadius()*2);
 	}
 
 }

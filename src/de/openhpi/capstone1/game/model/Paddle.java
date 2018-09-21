@@ -4,11 +4,11 @@ public class Paddle extends PositionableElement {
 	int width;
 	int height;
 	
-	public Paddle(int width, int height, int xPos, int yPos) {
-		this.width = width;
-		this.height = height;
+	public Paddle(int xPos, int yPos, int width, int height) {
 		this.xPos = xPos;
 		this.yPos = yPos;
+		this.width = width;
+		this.height = height;
 	}
 	
 	/**

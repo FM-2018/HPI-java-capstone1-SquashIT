@@ -28,3 +28,9 @@
 	- finally able to implement build methods.
 	- decided to put constants at beginning to ease changing things and increase readability
 	- unfortunately, integers may cause imprecision of one pixel at a time. maybe change back to floats later on.
+- next up, want to see something!!! began with game window
+	- Found that name isn't very fitting so, changed it to game field instead
+	- also changed way coordinates and widths are taken. After all, bottom "death" part is still part of field. Use distance top and width instead
+	- no output at that point. Figure I have to implement other methods first, so I did
+	- did ball and paddle. seemed very easy.
+	- fixed an error in which I forgot to pass display into Game constructor. Game needs the display for drawing, building and calculating.

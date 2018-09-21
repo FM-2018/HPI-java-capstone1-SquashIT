@@ -13,6 +13,7 @@
 	- turns out to be very simple to finish, since all of the logic is in other classes
 - next: interactive component builder
 	- create game class with its planned methods first
+	- game will also need access to PApplet to process input. Makes no sense to do that at TheApp class
 	- actually, next steps are very simple. Just call given build methods of game class
 	- String type parameter in builder confused me. I decided to settle for a constant instead that allows choosing the type. hex-Number is more or less random
 	- PROBLEM: variables declared in a switch case statement, or even in an if are obviously local. 
@@ -20,4 +21,7 @@
 		- required to declare variable outside, but at that point the type is unknown
 		- therefore, use abstract class InteractiveComponent. But this lacks the methods, which leads to failure when putting a game into the variable
 		- SOLUTION: edit abstract class to force every descendant to have these methods
-	
+- continue by implementing game class
+	- many other classes from the model, view and controller have to be defined now. So that's what I do
+	- decided that floats in models are unnecessary. ints are precise enough for this coordinate system
+	- had to change a few variables along the way. as obvious, planning is not my thing. For instance, decided to add stepWidth variable for Paddle controllers

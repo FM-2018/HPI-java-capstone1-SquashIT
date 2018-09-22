@@ -4,10 +4,12 @@ import de.openhpi.capstone1.game.model.Paddle;
 
 public class PaddleControllerStrategyRight implements Controller {
 
-	Paddle paddle;
+	private PaddleControllerMoveRight controllerMove;
+	private PaddleControllerBoundary controllerBoundary;
 	
 	public PaddleControllerStrategyRight(Paddle paddle, int stepWidth) {
-		this.paddle = paddle;
+		controllerMove = new PaddleControllerMoveRight(paddle, stepWidth);
+		controllerBoundary = new PaddleControllerBoundary(paddle, stepWidth);
 	}
 	
 	@Override

@@ -5,16 +5,24 @@ import de.openhpi.capstone1.game.model.Paddle;
 public class PaddleControllerBoundary implements Controller {
 	
 	private Paddle paddle;
-	private int stepWidth;
 	
-	public PaddleControllerBoundary(Paddle paddle, int stepWidth) {
+	public PaddleControllerBoundary(Paddle paddle) {
 		this.paddle = paddle;
-		this.stepWidth = stepWidth;
 	}
 	
 	@Override
 	public void handleEvent() {
-		// TODO handle even paddle controller boundary
+		// Snap back to either the left or the right boundary; depending on which one the paddle is closest to.
+		int distLeft = paddle.getX() - paddle.boundaryLeft;
+		int distRight = paddle.boundaryRight - paddle.getX();
+		
+		if (distLeft < distRight) {
+			paddle.setX(paddle.boundaryLeft);
+		} else if (distRight < distLeft) {
+			paddle.setX(paddle.boundaryRight);
+		} else {
+			// The paddle is exactly in the middle. Do nothing.
+		}
 
 	}
 

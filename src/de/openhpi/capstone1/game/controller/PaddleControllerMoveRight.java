@@ -14,8 +14,7 @@ public class PaddleControllerMoveRight implements Controller {
 	
 	@Override
 	public void handleEvent() {
-		// TODO handle paddle controller move right
-
+		paddle.move(stepWidth);
 	}
 
 }

@@ -11,7 +11,7 @@ public class PaddleControllerStrategyLeft implements Controller {
 	
 	public PaddleControllerStrategyLeft(Paddle paddle, int stepWidth) {
 		controllerMove = new PaddleControllerMoveLeft(paddle, stepWidth);
-		controllerBoundary = new PaddleControllerBoundary(paddle, stepWidth);
+		controllerBoundary = new PaddleControllerBoundary(paddle);
 		this.paddle = paddle;
 		this.stepWidth = stepWidth;
 	}

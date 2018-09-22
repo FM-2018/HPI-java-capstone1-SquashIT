@@ -1,14 +1,18 @@
 package de.openhpi.capstone1.game.model;
 
 public class Paddle extends PositionableElement {
-	int width;
-	int height;
+	private int width;
+	private int height;
+	public int boundaryLeft;
+	public int boundaryRight;
 	
-	public Paddle(int xPos, int yPos, int width, int height) {
+	public Paddle(int xPos, int yPos, int width, int height, int boundLeft, int boundRight) {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.width = width;
 		this.height = height;
+		boundaryLeft = boundLeft;
+		boundaryRight = boundRight;
 	}
 	
 	/**

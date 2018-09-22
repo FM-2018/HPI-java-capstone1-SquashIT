@@ -37,3 +37,7 @@
 - proceeded by adding input logic to Game class. Depending on which button pressed, call controllers
 - now implement controllers
 	- paddle controller strategy left, constructor to build actual controllers required
+	- now, there was a problem. Needed to determine which controller to choose: controller move, or controller boundary.
+	- controller strategies don't know the GameField, though.
+	- decided to give paddle an additional attribute: boundaryLeft and boundaryRight. The x coordinates which it may not move past.
+	- I found that constantly updating the UML diagram was getting too annoying with too few payback. Therefore, didn't work on it anymore

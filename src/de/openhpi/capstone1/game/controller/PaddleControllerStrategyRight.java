@@ -6,16 +6,23 @@ public class PaddleControllerStrategyRight implements Controller {
 
 	private PaddleControllerMoveRight controllerMove;
 	private PaddleControllerBoundary controllerBoundary;
+	private Paddle paddle;
+	private int stepWidth;
 	
 	public PaddleControllerStrategyRight(Paddle paddle, int stepWidth) {
 		controllerMove = new PaddleControllerMoveRight(paddle, stepWidth);
 		controllerBoundary = new PaddleControllerBoundary(paddle, stepWidth);
+		this.paddle = paddle;
+		this.stepWidth = stepWidth;
 	}
 	
 	@Override
 	public void handleEvent() {
-		// TODO handle paddle right
-
+		if (paddle.getX() + stepWidth >= paddle.boundaryRight) {
+			controllerBoundary.handleEvent();
+		} else {
+			controllerMove.handleEvent();
+		}
 	}
 
 }

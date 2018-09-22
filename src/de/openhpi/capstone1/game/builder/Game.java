@@ -51,19 +51,22 @@ public class Game extends InteractiveComponent {
 	
 	@Override
 	public void buildModels() {
+		int GAME_WINDOW_X = display.width/2;
 		int GAME_WINDOW_WIDTH = display.width*8/10;
 		int GAME_WINDOW_DISTANCE_TOP = display.height*2/10;
 		
 		int PADDLE_Y_POS = display.height - 30; // 30 pixels above the bottom of the pit
 		int PADDLE_WIDTH = GAME_WINDOW_WIDTH/8;
 		int PADDLE_HEIGHT = 10;
+		int PADDLE_BOUND_LEFT =  GAME_WINDOW_X - GAME_WINDOW_WIDTH + PADDLE_WIDTH/2; // minimum x value which the paddle may have
+		int PADDLE_BOUND_RIGHT = GAME_WINDOW_X + GAME_WINDOW_WIDTH - PADDLE_WIDTH/2;  // maximum x value which the paddle may have
 		
 		int BALL_RADIUS = 5;
 		int INIT_BALL_VELOCITY_X = 3; // TODO: randomize ball velocity? or rather randomize ball position?
 		int INIT_BALL_VELOCITY_Y = 3;
 		
-		this.gameField = new GameField(display.width/2, GAME_WINDOW_WIDTH, GAME_WINDOW_DISTANCE_TOP);
-		this.paddle = new Paddle(display.width/2, PADDLE_Y_POS, PADDLE_WIDTH, PADDLE_HEIGHT);
+		this.gameField = new GameField(GAME_WINDOW_X, GAME_WINDOW_WIDTH, GAME_WINDOW_DISTANCE_TOP);
+		this.paddle = new Paddle(display.width/2, PADDLE_Y_POS, PADDLE_WIDTH, PADDLE_HEIGHT, PADDLE_BOUND_LEFT, PADDLE_BOUND_RIGHT);
 		this.ball = new Ball(display.width/2, display.height/2, BALL_RADIUS, INIT_BALL_VELOCITY_X, INIT_BALL_VELOCITY_Y);
 	}
 	

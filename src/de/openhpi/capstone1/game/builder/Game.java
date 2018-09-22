@@ -10,6 +10,7 @@ import de.openhpi.capstone1.game.view.BallView;
 import de.openhpi.capstone1.game.view.GameFieldView;
 import de.openhpi.capstone1.game.view.PaddleView;
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Game extends InteractiveComponent {
 	/*
@@ -32,7 +33,20 @@ public class Game extends InteractiveComponent {
 	
 	@Override
 	public void handleEvent() {
-		// TODO Handle input events in interactive component.
+		switch (display.key) {
+			case ' ':
+				// TODO: handle ball reset or balldepot logic if ever implemented
+				break;
+			case PConstants.CODED: // key is coded a special way; need to check keyCode instead
+				switch (display.keyCode) {
+					case PConstants.LEFT:
+						paddleControlStratLeft.handleEvent();
+						break;
+					case PConstants.RIGHT:
+						paddleControlStratRight.handleEvent();
+						break;
+				}
+		}
 	}
 	
 	@Override

@@ -34,3 +34,4 @@
 	- no output at that point. Figure I have to implement other methods first, so I did
 	- did ball and paddle. seemed very easy.
 	- fixed an error in which I forgot to pass display into Game constructor. Game needs the display for drawing, building and calculating.
+- proceeded by adding input logic to Game class. Depending on which button pressed, call controllers

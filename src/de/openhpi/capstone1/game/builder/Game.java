@@ -35,6 +35,7 @@ public class Game extends InteractiveComponent {
 	
 	public Game(PApplet display) {
 		this.display = display;
+		System.out.println(display.frameRate);
 	}
 	
 	@Override
@@ -85,7 +86,6 @@ public class Game extends InteractiveComponent {
 	
 	@Override
 	public void buildViews(PApplet display) {
-		// TODO: add try/catch block in case buildViews is called before buildModels
 		views = new AbstractView[] {
 				new GameFieldView(display, gameField),
 				new PaddleView(display, paddle),
@@ -95,13 +95,12 @@ public class Game extends InteractiveComponent {
 	
 	@Override
 	public void buildControllers() {
-		// TODO: add try/catch block in case builControllers is called before buildModels
 		int PADDLE_STEP_WIDTH = paddle.getWidth()/2;
 		
 		paddleControlStratLeft = new PaddleControllerStrategyLeft(paddle, PADDLE_STEP_WIDTH);
 		paddleControlStratRight = new PaddleControllerStrategyRight(paddle, PADDLE_STEP_WIDTH);
 		
-		ballController = new BallController(ball, paddle, gameField);
+		ballController = new BallController(ball, paddle, gameField, (int) display.frameRate);
 	}
 
 }

@@ -16,6 +16,7 @@ public class TheApp extends PApplet {
 
 	@Override
 	public void setup() {  // setup() runs once
+		frameRate(60);
 		interactiveComponent = InteractiveComponentBuilder.create(this, InteractiveComponentBuilder.GAME);
 	}
 

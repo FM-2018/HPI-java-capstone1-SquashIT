@@ -9,11 +9,15 @@ public class BallController implements Controller {
 	Ball ball;
 	Paddle paddle;
 	GameField gameField;
+	int frameRate;
+	int frameCount;
 	
-	public BallController(Ball ball, Paddle paddle, GameField gameField) {
+	public BallController(Ball ball, Paddle paddle, GameField gameField, int frameRate) {
 		this.ball = ball;
 		this.paddle = paddle;
 		this.gameField = gameField;
+		this.frameRate = frameRate;
+		frameCount = 0;
 	}
 	
 	private boolean paddleCollision(Paddle paddle, int ballX, int ballY) {
@@ -33,7 +37,7 @@ public class BallController implements Controller {
 		int nextBallX = ball.getX() + ball.velocityX;
 		int nextBallY = ball.getY() + ball.velocityY;
 		
-		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING
+		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING AND PERFORM ACTIONS. ELSE JUST MOVE.
 		
 		// TODO: what if ball collides with corner?
 		// TODO: when ball collides with paddle, it'll only change its y velocity, even though it should bounce off to the side 
@@ -52,6 +56,24 @@ public class BallController implements Controller {
 			ball.bounceY(distanceTillBounce);
 		} else {
 			ball.move();
+		}
+		
+		
+		// INCREASE BALL VELOCITY AFTER 10 SECONDS
+		frameCount++;
+		if (frameCount % (frameRate*60) == 0) {
+			if (ball.velocityX >= 0) {
+				ball.velocityX += 1;
+			} else {
+				ball.velocityX -= 1;
+			}
+			
+			if (ball.velocityY >= 0) {				
+				ball.velocityY += 1;
+			} else {
+				ball.velocityY -= 1;
+			}
+			frameCount = 0;
 		}
 
 	}

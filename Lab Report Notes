@@ -55,10 +55,15 @@
 	- in order to make ball update every time a screen is drawn, had to hook it into InteractiveComponent.update()
 	- so I don't have to re-type what was already inside there because i had to override in Game, I decided to rename given update method to updateViews
 	- that's then called in the actual update() method. can easily override and extend now
-- unfortunately, ball only few times, then ran into an error
+- unfortunately, ball moved only few times, then ran into an error
 	- turned out to be a simple mistake on my side. Used getX when it should have been getY.
 	- but paddle collision causes an exception, which I've implemented into bounceY and bounceX (fortunately)
 	- again, an arithmetic mistake made by me
+	- same for the bouncing off walls (negative velocities weren't considered)
+	- but finally, it worked very well
+- now I decided to make the ball faster every ten seconds
+	- made ballcontroller know how high the frame rate is
+	- added counter; whenever it is equal to frame rate, one second has passed. 10 seconds means reset counter and increase velocity by 1
 	
 	
 	

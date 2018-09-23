@@ -45,4 +45,20 @@
 	- Though I had to decide on controller boundary snapping the paddle to either side, depending on its current position
 	- paddle now able to move within bounds of game window, as schematic shows. Half a paddle at a time.
 - time to implement ball logic
-	-
+	- noticed I need much more information in the ball controller than originally thought
+	- not just ball, but also paddle and gamefield. In fact, every object the ball might collide with
+	- also, had to add "ballDeathLine" to gameField, so ballcontroller knows when ball is supposed to die
+	- also added convenience functions in GameField to determine boundary
+	- proceeded to write logic. 
+	- Also added bounceX and bounceY to Ball model. Important: I made sure that ball doesn't boucne immediately, since that'd be a problem with velocity greater than 1.
+	- realize that implementation may cause trouble when bouncing in corner; and it doesn't bounce off side of paddle, only top. But let's see.
+	- in order to make ball update every time a screen is drawn, had to hook it into InteractiveComponent.update()
+	- so I don't have to re-type what was already inside there because i had to override in Game, I decided to rename given update method to updateViews
+	- that's then called in the actual update() method. can easily override and extend now
+- unfortunately, ball only few times, then ran into an error
+	- turned out to be a simple mistake on my side. Used getX when it should have been getY.
+	- but paddle collision causes an exception, which I've implemented into bounceY and bounceX (fortunately)
+	- again, an arithmetic mistake made by me
+	
+	
+	

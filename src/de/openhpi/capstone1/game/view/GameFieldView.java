@@ -17,7 +17,7 @@ public class GameFieldView extends AbstractView {
 		display.stroke(0);
 		display.fill(240);
 		
-		int topDistance = gameField.getdistanceWindowTop();
+		int topDistance = gameField.getTopBound();
 		int width = gameField.getWidth();
 		int x = gameField.getX();
 		

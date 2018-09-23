@@ -8,6 +8,10 @@ public abstract class InteractiveComponent {
 	protected AbstractView[] views; 
 	
 	public void update() {
+		updateViews();
+	}
+	
+	public void updateViews() {
 		for (AbstractView view : views) {
 			view.update(); 
 		}

@@ -9,10 +9,9 @@ public class BallController implements Controller {
 	Ball ball;
 	Paddle paddle;
 	GameField gameField;
-	int framesTillSpeedUp;
-	int frameCount;
+	float framesTillSpeedUp;
 	
-	public BallController(Ball ball, Paddle paddle, GameField gameField, int secondsTillSpeedUp, int frameRate) {
+	public BallController(Ball ball, Paddle paddle, GameField gameField, float secondsTillSpeedUp, float frameRate) {
 		this.ball = ball;
 		this.paddle = paddle;
 		this.gameField = gameField;
@@ -36,11 +35,10 @@ public class BallController implements Controller {
 		float nextBallX = ball.getX() + ball.velocityX;
 		float nextBallY = ball.getY() + ball.velocityY;
 		
-		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING AND PERFORM ACTIONS. ELSE JUST MOVE.
-		
 		// TODO: what if ball collides with corner?
 		// TODO: when ball collides with paddle, it'll only change its y velocity, even though it should bounce off to the side 
 		
+		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING AND PERFORM ACTIONS. ELSE JUST MOVE.
 		if (nextBallX < gameField.getLeftBound()) {
 			float distanceTillBounce = ball.getX() - gameField.getLeftBound();
 			ball.bounceX(distanceTillBounce);
@@ -57,22 +55,17 @@ public class BallController implements Controller {
 			ball.move();
 		}
 		
+		// INCREASE BALL VELOCITY GRADUALLY SO THAT AFTER X FRAMES IT HAS INCREASED BY ONE
+		if (ball.velocityX >= 0) {
+			ball.velocityX += 1.0f/framesTillSpeedUp;
+		} else {
+			ball.velocityX -= 1.0f/framesTillSpeedUp;
+		}
 		
-		// INCREASE BALL VELOCITY AFTER 10 SECONDS
-		frameCount++;
-		if (frameCount % framesTillSpeedUp == 0) {
-			if (ball.velocityX >= 0) {
-				ball.velocityX += 1;
-			} else {
-				ball.velocityX -= 1;
-			}
-			
-			if (ball.velocityY >= 0) {				
-				ball.velocityY += 1;
-			} else {
-				ball.velocityY -= 1;
-			}
-			frameCount = 0;
+		if (ball.velocityY >= 0) {				
+			ball.velocityY += 1.0f/framesTillSpeedUp;
+		} else {
+			ball.velocityY -= 1.0f/framesTillSpeedUp;
 		}
 
 	}

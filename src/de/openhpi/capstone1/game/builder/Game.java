@@ -102,7 +102,7 @@ public class Game extends InteractiveComponent {
 		paddleControlStratLeft = new PaddleControllerStrategyLeft(paddle, PADDLE_STEP_WIDTH);
 		paddleControlStratRight = new PaddleControllerStrategyRight(paddle, PADDLE_STEP_WIDTH);
 		
-		ballController = new BallController(ball, paddle, gameField, SECONDS_TILL_BALL_SPEED_UP, (int) display.frameRate);
+		ballController = new BallController(ball, paddle, gameField, SECONDS_TILL_BALL_SPEED_UP, display.frameRate);
 	}
 
 }

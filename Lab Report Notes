@@ -62,8 +62,12 @@
 	- same for the bouncing off walls (negative velocities weren't considered)
 	- but finally, it worked very well
 - now I decided to make the ball faster every ten seconds
-	- made ballcontroller know how high the frame rate is
-	- added counter; whenever it is equal to frame rate, one second has passed. 10 seconds means reset counter and increase velocity by 1
-	
+	- made ballcontroller know how high the frame rate is to calculate number of frames to pass before increasing speed (i.e. framerate (second) * amount of seconds)
+	- added counter; whenever the critical number of frames has been passed, increase by one
+	- works well, but the ball increases too instantly. The user can clearly see it the first time.
+	- thus, increase gradually. Every frame a little bit!
+	- changed all or at least most of the integers to floats
+	- then went for a gradual increase by SPEED_INCREASE/CRITICAL_FRAME_NUMBER
+	- realized I need to divide float by number, or else I won't get a proper floating point result
 	
 	

@@ -46,6 +46,10 @@ public class BallDepot extends PositionableElement {
 		}
 	}
 	
+	public boolean isDepleted() {
+		return ballAmountLeft < 1;
+	}
+	
 	public float getHeight() {
 		return height;
 	}

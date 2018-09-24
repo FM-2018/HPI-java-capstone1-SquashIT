@@ -11,12 +11,14 @@ import de.openhpi.capstone1.game.exceptions.BallDepotDepletedException;
 import de.openhpi.capstone1.game.model.Ball;
 import de.openhpi.capstone1.game.model.BallDepot;
 import de.openhpi.capstone1.game.model.GameField;
+import de.openhpi.capstone1.game.model.GameOverScreen;
 import de.openhpi.capstone1.game.model.Paddle;
 import de.openhpi.capstone1.game.model.Timer;
 import de.openhpi.capstone1.game.view.AbstractView;
 import de.openhpi.capstone1.game.view.BallDepotView;
 import de.openhpi.capstone1.game.view.BallView;
 import de.openhpi.capstone1.game.view.GameFieldView;
+import de.openhpi.capstone1.game.view.GameOverScreenView;
 import de.openhpi.capstone1.game.view.PaddleView;
 import de.openhpi.capstone1.game.view.TimerView;
 import processing.core.PApplet;
@@ -64,6 +66,10 @@ public class Game extends InteractiveComponent {
 				timerResults.add(timer.exportState());
 				
 				gameActive = false;
+				
+				if (ballDepot.isDepleted()) {
+					showGameOverScreen();
+				}
 			}
 		
 		}
@@ -160,7 +166,10 @@ public class Game extends InteractiveComponent {
 	}
 	
 	private void showGameOverScreen() {
+		int[] bestTime = Timer.findGreatestTime(timerResults);
+		GameOverScreen gameOverScreen = new GameOverScreen(bestTime);
 		
+		views[views.length-1] = new GameOverScreenView(display, gameOverScreen);
 	}
 
 }

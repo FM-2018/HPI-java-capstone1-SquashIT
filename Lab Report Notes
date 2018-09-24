@@ -79,5 +79,14 @@
 	- view was of course implemented
 	- ball depot is a bit dynamic in the way that it scales ball's size if there are more or less of them sot hat they all fit into it
 	- still not flawless of course, since great numbers of balls make them tiny as they are not displayed in multiple rows yet
+- ball depot has to come to use of course, so now we need to make balls out of bounds die and enable user to put balls into the field
+	- start with the latter. first of all, there is no ball. user has to press space bar in order to insert it.
+	- as already implemented, one ball is removed from the top of the depot and inserted into the game
+	- unfortunately, in order to deal with views array, had to create a dummy. That doesn't seem very clean to me. But it works.
+- now, I also want to make sure the timer is saved for later, because I want to display the best time on the game over screen
+	- extend Timer class a bit with static method to compare timers as well as method to export timer state as an int array
+	- save all that into an array list in Game class for later reference
+- finally, the game over screen
+	- add boolean function to BallDepot model. public boolean depleted(). Returns yes if no balls are left.
 	
 	

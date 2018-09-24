@@ -69,5 +69,8 @@
 	- changed all or at least most of the integers to floats
 	- then went for a gradual increase by SPEED_INCREASE/CRITICAL_FRAME_NUMBER
 	- realized I need to divide float by number, or else I won't get a proper floating point result
+- next, I just wanted to implement a timer so the player knows how long they've made it.
+	- again, model view controller pattern as per usual
+	- went for precision up to a tenth
 	
 	

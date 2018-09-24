@@ -17,6 +17,7 @@ public class TheApp extends PApplet {
 	@Override
 	public void setup() {  // setup() runs once
 		frameRate(60);
+		frameRate = (float) 60.0; // for some reason, frameRate method doesn't seem to update frameRate to 60. It would remain 10.  I need the proper value for the Game to read, though.
 		interactiveComponent = InteractiveComponentBuilder.create(this, InteractiveComponentBuilder.GAME);
 	}
 

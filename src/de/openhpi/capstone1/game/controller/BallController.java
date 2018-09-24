@@ -9,15 +9,14 @@ public class BallController implements Controller {
 	Ball ball;
 	Paddle paddle;
 	GameField gameField;
-	int frameRate;
+	int framesTillSpeedUp;
 	int frameCount;
 	
-	public BallController(Ball ball, Paddle paddle, GameField gameField, int frameRate) {
+	public BallController(Ball ball, Paddle paddle, GameField gameField, int secondsTillSpeedUp, int frameRate) {
 		this.ball = ball;
 		this.paddle = paddle;
 		this.gameField = gameField;
-		this.frameRate = frameRate;
-		frameCount = 0;
+		framesTillSpeedUp = frameRate * secondsTillSpeedUp;
 	}
 	
 	private boolean paddleCollision(Paddle paddle, int ballX, int ballY) {
@@ -61,7 +60,7 @@ public class BallController implements Controller {
 		
 		// INCREASE BALL VELOCITY AFTER 10 SECONDS
 		frameCount++;
-		if (frameCount % (frameRate*60) == 0) {
+		if (frameCount % framesTillSpeedUp == 0) {
 			if (ball.velocityX >= 0) {
 				ball.velocityX += 1;
 			} else {

@@ -97,10 +97,12 @@ public class Game extends InteractiveComponent {
 	public void buildControllers() {
 		int PADDLE_STEP_WIDTH = paddle.getWidth()/2;
 		
+		int SECONDS_TILL_BALL_SPEED_UP = 10;
+		
 		paddleControlStratLeft = new PaddleControllerStrategyLeft(paddle, PADDLE_STEP_WIDTH);
 		paddleControlStratRight = new PaddleControllerStrategyRight(paddle, PADDLE_STEP_WIDTH);
 		
-		ballController = new BallController(ball, paddle, gameField, (int) display.frameRate);
+		ballController = new BallController(ball, paddle, gameField, SECONDS_TILL_BALL_SPEED_UP, (int) display.frameRate);
 	}
 
 }

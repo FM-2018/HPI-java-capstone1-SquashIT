@@ -72,5 +72,12 @@
 - next, I just wanted to implement a timer so the player knows how long they've made it.
 	- again, model view controller pattern as per usual
 	- went for precision up to a tenth
+- now, the game over scenario. I'll keep the goal simple for now, since I want to change it with a balldepot later on.
+	- so, the ball should die once it passed the death zone. I'll add a check in the update method of the game for that.
+	- fairly difficult to proceed from here. I do plan there to be a ball depot with three balls. So I decide to implement that first
+	- I decided not to implement a controller, since it seemed unnecessary
+	- view was of course implemented
+	- ball depot is a bit dynamic in the way that it scales ball's size if there are more or less of them sot hat they all fit into it
+	- still not flawless of course, since great numbers of balls make them tiny as they are not displayed in multiple rows yet
 	
 	

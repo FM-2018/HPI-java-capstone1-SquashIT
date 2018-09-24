@@ -93,5 +93,5 @@
 - there's room for a few extras. For instance, a welcome message. Again, another view is created (though there isn't actually a model for this one)
 	- just a simple message drawn in the middle of the screen.
 	- strangely, other texts are moved a little bit to the left when using it. It's because I specified text alignment. Had to do it explicitly everywhere to avoid this problem
-	
+- as the final polish, I renamed the game from "TheApp" to "SquashIT". Basically, refactoring the TheApp class with rename did all it took for this.
 	

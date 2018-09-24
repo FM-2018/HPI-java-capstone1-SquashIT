@@ -5,7 +5,7 @@ import de.openhpi.capstone1.game.builder.InteractiveComponent;
 import de.openhpi.capstone1.game.builder.InteractiveComponentBuilder;
 import processing.core.PApplet;
 
-public class TheApp extends PApplet {
+public class SquashIT extends PApplet {
 	
 	private InteractiveComponent interactiveComponent; // we only got one component for now, so an array/list is not necessary
 	

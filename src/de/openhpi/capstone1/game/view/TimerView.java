@@ -2,6 +2,7 @@ package de.openhpi.capstone1.game.view;
 
 import de.openhpi.capstone1.game.model.Timer;
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class TimerView extends AbstractView {
 
@@ -20,6 +21,8 @@ public class TimerView extends AbstractView {
 		String sec = timer.secondsCount + "";
 		String tenth = timer.tenthSecondsCount + "";
 		
+		display.textSize(32);
+		display.textAlign(PConstants.LEFT);
 		display.text(sec + "." + tenth, timer.getX(), timer.getY());
 	}
 

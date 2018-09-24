@@ -21,6 +21,7 @@ import de.openhpi.capstone1.game.view.GameFieldView;
 import de.openhpi.capstone1.game.view.GameOverScreenView;
 import de.openhpi.capstone1.game.view.PaddleView;
 import de.openhpi.capstone1.game.view.TimerView;
+import de.openhpi.capstone1.game.view.WelcomeMessageView;
 import processing.core.PApplet;
 import processing.core.PConstants;
 
@@ -151,7 +152,7 @@ public class Game extends InteractiveComponent {
 				new PaddleView(display, paddle),
 				new TimerView(display, timer),
 				new BallDepotView(display, ballDepot),
-				new BallView(display, new Ball(-200, -200, 10, 0, 0)) // placeholder for BallView. BallView is always last element of this array. To circumvent class type problems (i.e. Abstact view or a descendent is required here), just create a dummy view here
+				new WelcomeMessageView(display) // placeholder for BallView. BallView is always last element of this array. For now, just put an initial "Press space to begin" message here.
 		};
 	}
 	

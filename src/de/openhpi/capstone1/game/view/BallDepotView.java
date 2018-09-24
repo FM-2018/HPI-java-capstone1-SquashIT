@@ -34,6 +34,7 @@ public class BallDepotView extends AbstractView {
 		
 		// draw description
 		display.textSize(26);
+		display.textAlign(PConstants.LEFT);
 		display.fill(0);
 		display.text("Balls", ballDepot.getX()-ballDepot.getWidth()/2 + 2, ballDepot.getY()-ballDepot.getHeight()/2 - 5);
 	}

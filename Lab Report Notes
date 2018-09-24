@@ -88,5 +88,10 @@
 	- save all that into an array list in Game class for later reference
 - finally, the game over screen
 	- add boolean function to BallDepot model. public boolean depleted(). Returns yes if no balls are left.
+	- add new model GameOverScreen along with a view for it.
+	- once all balls are depleted, update method will replace Ball View with a game over screen view that's drawn above everything else. The game is left soft-locked.
+- there's room for a few extras. For instance, a welcome message. Again, another view is created (though there isn't actually a model for this one)
+	- just a simple message drawn in the middle of the screen.
+	- strangely, other texts are moved a little bit to the left when using it. It's because I specified text alignment. Had to do it explicitly everywhere to avoid this problem
 	
 	

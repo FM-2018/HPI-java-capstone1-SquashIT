@@ -1,34 +1,34 @@
 package de.openhpi.capstone1.game.model;
 
 public class GameField extends PositionableElement {
-	private int width;
-	private int distanceWindowTop;
-	private int ballDeathLine;
+	private float width;
+	private float distanceWindowTop;
+	private float ballDeathLine;
 	
-	public GameField(int x, int width, int distanceWindowTop, int ballDeathLine) {
+	public GameField(float x, float width, float distanceWindowTop, float ballDeathLine) {
 		this.width = width;
 		this.distanceWindowTop = distanceWindowTop;
 		xPos = x;
 		this.ballDeathLine = ballDeathLine;
 	}
 	
-	public int getWidth() {
+	public float getWidth() {
 		return width;
 	}
 	
-	public int getBallDeathLine() {
+	public float getBallDeathLine() {
 		return ballDeathLine;
 	}
 	
-	public int getTopBound() {
+	public float getTopBound() {
 		return distanceWindowTop;
 	}
 	
-	public int getLeftBound() {
+	public float getLeftBound() {
 		return xPos - width/2;
 	}
 	
-	public int getRightBound() {
+	public float getRightBound() {
 		return xPos + width/2;
 	}
 }

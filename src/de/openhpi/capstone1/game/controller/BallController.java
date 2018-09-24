@@ -19,11 +19,11 @@ public class BallController implements Controller {
 		framesTillSpeedUp = frameRate * secondsTillSpeedUp;
 	}
 	
-	private boolean paddleCollision(Paddle paddle, int ballX, int ballY) {
-		int paddleTopBound = paddle.getY() - paddle.getHeight()/2;
-		int paddleLeftBound = paddle.getX() - paddle.getWidth()/2;
-		int paddleBottomBound = paddle.getY() + paddle.getHeight()/2;
-		int paddleRightBound = paddle.getX() + paddle.getWidth()/2;
+	private boolean paddleCollision(Paddle paddle, float ballX, float ballY) {
+		float paddleTopBound = paddle.getY() - paddle.getHeight()/2;
+		float paddleLeftBound = paddle.getX() - paddle.getWidth()/2;
+		float paddleBottomBound = paddle.getY() + paddle.getHeight()/2;
+		float paddleRightBound = paddle.getX() + paddle.getWidth()/2;
 		
 		boolean ballOnHorizPaddleLine = (ballY > paddleTopBound) && (ballY < paddleBottomBound);
 		boolean ballOnVertPaddleLine = (ballX > paddleLeftBound) && (ballX < paddleRightBound);
@@ -33,8 +33,8 @@ public class BallController implements Controller {
 	
 	@Override
 	public void handleEvent() {
-		int nextBallX = ball.getX() + ball.velocityX;
-		int nextBallY = ball.getY() + ball.velocityY;
+		float nextBallX = ball.getX() + ball.velocityX;
+		float nextBallY = ball.getY() + ball.velocityY;
 		
 		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING AND PERFORM ACTIONS. ELSE JUST MOVE.
 		
@@ -42,16 +42,16 @@ public class BallController implements Controller {
 		// TODO: when ball collides with paddle, it'll only change its y velocity, even though it should bounce off to the side 
 		
 		if (nextBallX < gameField.getLeftBound()) {
-			int distanceTillBounce = ball.getX() - gameField.getLeftBound();
+			float distanceTillBounce = ball.getX() - gameField.getLeftBound();
 			ball.bounceX(distanceTillBounce);
 		} else if (nextBallX > gameField.getRightBound()) {
-			int distanceTillBounce = gameField.getRightBound() - ball.getX();
+			float distanceTillBounce = gameField.getRightBound() - ball.getX();
 			ball.bounceX(distanceTillBounce);
 		} else if (nextBallY < gameField.getTopBound()) {
-			int distanceTillBounce = ball.getY() - gameField.getTopBound();
+			float distanceTillBounce = ball.getY() - gameField.getTopBound();
 			ball.bounceY(distanceTillBounce);
 		} else if (paddleCollision(paddle, nextBallX, nextBallY)) {
-			int distanceTillBounce = paddle.getY() -paddle.getHeight()/2 - ball.getY();
+			float distanceTillBounce = paddle.getY() -paddle.getHeight()/2 - ball.getY();
 			ball.bounceY(distanceTillBounce);
 		} else {
 			ball.move();

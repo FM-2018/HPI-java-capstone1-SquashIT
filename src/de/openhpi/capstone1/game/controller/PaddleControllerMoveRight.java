@@ -5,9 +5,9 @@ import de.openhpi.capstone1.game.model.Paddle;
 public class PaddleControllerMoveRight implements Controller {
 
 	private Paddle paddle;
-	private int stepWidth;
+	private float stepWidth;
 	
-	public PaddleControllerMoveRight(Paddle paddle, int stepWidth) {
+	public PaddleControllerMoveRight(Paddle paddle, float stepWidth) {
 		this.paddle = paddle;
 		this.stepWidth = stepWidth;
 	}

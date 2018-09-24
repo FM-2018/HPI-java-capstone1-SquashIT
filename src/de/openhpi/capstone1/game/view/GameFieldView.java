@@ -17,15 +17,15 @@ public class GameFieldView extends AbstractView {
 		display.stroke(0);
 		display.fill(240);
 		
-		int topDistance = gameField.getTopBound();
-		int width = gameField.getWidth();
-		int x = gameField.getX();
+		float topDistance = gameField.getTopBound();
+		float width = gameField.getWidth();
+		float x = gameField.getX();
 		
 		// Just imagine vertical and horizontal lines, which are accurately definable with only one given point
-		int leftVertLine = x - width/2;
-		int rightVertLine = x + width/2;
-		int topHorizLine = topDistance;
-		int bottomHorizLine = display.height+1; // Graphics designers hate him: make sure the border's stroke is not visible at the bottom with this simple trick! 
+		float leftVertLine = x - width/2;
+		float rightVertLine = x + width/2;
+		float topHorizLine = topDistance;
+		float bottomHorizLine = display.height+1; // Graphics designers hate him: make sure the border's stroke is not visible at the bottom with this simple trick! 
 		
 		// draw a rectangle defined by four points; namely where the lines intersect. Going counterclockwise, starting in the upper left corner.
 		display.quad(leftVertLine, topHorizLine, leftVertLine, bottomHorizLine, rightVertLine, bottomHorizLine, rightVertLine, topHorizLine);

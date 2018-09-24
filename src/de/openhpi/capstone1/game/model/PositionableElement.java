@@ -1,22 +1,22 @@
 package de.openhpi.capstone1.game.model;
 
 public abstract class PositionableElement {
-	int xPos;
-	int yPos;
+	float xPos;
+	float yPos;
 	
-	public int getX() {
+	public float getX() {
 		return xPos;
 	}
 	
-	public int getY() {
+	public float getY() {
 		return yPos;
 	}
 	
-	public void setX(int x) {
+	public void setX(float x) {
 		xPos = x;
 	}
 	
-	public void setY(int y) {
+	public void setY(float y) {
 		yPos = y;
 	}
 }

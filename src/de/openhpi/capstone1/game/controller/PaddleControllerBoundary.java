@@ -13,8 +13,8 @@ public class PaddleControllerBoundary implements Controller {
 	@Override
 	public void handleEvent() {
 		// Snap back to either the left or the right boundary; depending on which one the paddle is closest to.
-		int distLeft = paddle.getX() - paddle.boundaryLeft;
-		int distRight = paddle.boundaryRight - paddle.getX();
+		float distLeft = paddle.getX() - paddle.boundaryLeft;
+		float distRight = paddle.boundaryRight - paddle.getX();
 		
 		if (distLeft < distRight) {
 			paddle.setX(paddle.boundaryLeft);

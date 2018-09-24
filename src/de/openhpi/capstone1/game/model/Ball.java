@@ -1,11 +1,11 @@
 package de.openhpi.capstone1.game.model;
 
 public class Ball extends PositionableElement {
-	private int radius;
-	public int velocityX;
-	public int velocityY;
+	private float radius;
+	public float velocityX;
+	public float velocityY;
 	
-	public Ball(int x, int y, int radius, int initialVelocityX, int initialVelocityY) {
+	public Ball(float x, float y, float radius, float initialVelocityX, float initialVelocityY) {
 		xPos = x;
 		yPos = y;
 		this.radius = radius;
@@ -27,7 +27,7 @@ public class Ball extends PositionableElement {
 	 * @exception IllegalArgumentException The given distance is greater than the ball's x-velocity
 	 * @exception IllegalStateException The ball's current x-velocity is 0
 	 */
-	public void bounceX(int distance) {
+	public void bounceX(float distance) {
 		if (distance > Math.abs(velocityX)) {
 			throw new IllegalArgumentException("The leftover distance to travel can't be greater than the ball's velocity.");
 		}
@@ -40,7 +40,6 @@ public class Ball extends PositionableElement {
 		} else {
 			throw new IllegalStateException("The ball can't bounce in y-direction if its current x-velocity is 0.");
 		}
-		
 		yPos += velocityY;
 		
 		// Negate the velocity to keep ball moving in this opposite direction
@@ -53,7 +52,7 @@ public class Ball extends PositionableElement {
 	 * @exception IllegalArgumentException The given distance is greater than the ball's y-velocity
 	 * @exception IllegalStateException The ball's current y-velocity is 0
 	 */
-	public void bounceY(int distance) {
+	public void bounceY(float distance) {
 		if (distance > Math.abs(velocityY)) {
 			throw new IllegalArgumentException("The leftover distance to travel can't be greater than the ball's velocity.");
 		}
@@ -66,14 +65,13 @@ public class Ball extends PositionableElement {
 		} else {
 			throw new IllegalStateException("The ball can't bounce in y-direction if its current y-velocity is 0.");
 		}
-		
 		xPos += velocityX;
 		
 		// Negate the velocity to keep ball moving in this opposite direction
 		velocityY *= -1;
 	}
 	
-	public int getRadius() {
+	public float getRadius() {
 		return radius;
 	}
 	

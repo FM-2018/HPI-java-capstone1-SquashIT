@@ -95,7 +95,7 @@ public class Game extends InteractiveComponent {
 	
 	@Override
 	public void buildControllers() {
-		int PADDLE_STEP_WIDTH = paddle.getWidth()/2;
+		float PADDLE_STEP_WIDTH = paddle.getWidth()/2;
 		
 		int SECONDS_TILL_BALL_SPEED_UP = 10;
 		

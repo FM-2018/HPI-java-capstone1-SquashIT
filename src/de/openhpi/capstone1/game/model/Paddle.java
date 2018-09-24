@@ -1,12 +1,12 @@
 package de.openhpi.capstone1.game.model;
 
 public class Paddle extends PositionableElement {
-	private int width;
-	private int height;
-	public int boundaryLeft;
-	public int boundaryRight;
+	private float width;
+	private float height;
+	public float boundaryLeft;
+	public float boundaryRight;
 	
-	public Paddle(int xPos, int yPos, int width, int height, int boundLeft, int boundRight) {
+	public Paddle(float xPos, float yPos, float width, float height, float boundLeft, float boundRight) {
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.width = width;
@@ -19,15 +19,15 @@ public class Paddle extends PositionableElement {
 	 * Move the paddle along the x-axis by a specified amount.
 	 * @param amount if positive move right, if negative move left
 	 */
-	public void move(int amount) {
+	public void move(float amount) {
 		xPos += amount;
 	}
 	
-	public int getWidth() {
+	public float getWidth() {
 		return width;
 	}
 	
-	public int getHeight() {
+	public float getHeight() {
 		return height;
 	}
 }

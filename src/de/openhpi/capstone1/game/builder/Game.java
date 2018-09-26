@@ -46,7 +46,6 @@ public class Game extends InteractiveComponent {
 	
 	public Game(PApplet display) {
 		this.display = display;
-		System.out.println(display.frameRate);
 	}
 	
 	@Override

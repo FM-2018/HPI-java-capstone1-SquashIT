@@ -6,7 +6,7 @@ import processing.core.PConstants;
 
 public class TimerView extends AbstractView {
 
-	Timer timer;
+	private Timer timer;
 	
 	public TimerView(PApplet display, Timer timer) {
 		super(display);

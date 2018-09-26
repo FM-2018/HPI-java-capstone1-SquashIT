@@ -6,7 +6,7 @@ import processing.core.PConstants;
 
 public class GameOverScreenView extends AbstractView {
 
-	GameOverScreen gameOverScreen;
+	private GameOverScreen gameOverScreen;
 	
 	public GameOverScreenView(PApplet display, GameOverScreen gameOverScreen) {
 		super(display);

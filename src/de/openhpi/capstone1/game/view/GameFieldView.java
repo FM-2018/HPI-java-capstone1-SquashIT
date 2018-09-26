@@ -7,9 +7,9 @@ public class GameFieldView extends AbstractView {
 	
 	private GameField gameField;
 	
-	public GameFieldView(PApplet display, GameField model) {
+	public GameFieldView(PApplet display, GameField gameField) {
 		super(display);
-		this.gameField = model;
+		this.gameField = gameField;
 	}
 	
 	@Override

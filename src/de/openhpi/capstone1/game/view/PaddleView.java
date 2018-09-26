@@ -8,9 +8,9 @@ public class PaddleView extends AbstractView {
 	
 	private Paddle paddle;
 
-	public PaddleView(PApplet display, Paddle model) {
+	public PaddleView(PApplet display, Paddle paddle) {
 		super(display);
-		this.paddle = model;
+		this.paddle = paddle;
 	}
 	
 	@Override

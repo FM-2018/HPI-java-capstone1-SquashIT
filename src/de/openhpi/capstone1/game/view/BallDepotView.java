@@ -6,7 +6,7 @@ import processing.core.PConstants;
 
 public class BallDepotView extends AbstractView {
 
-	BallDepot ballDepot;
+	private BallDepot ballDepot;
 	
 	public BallDepotView(PApplet display, BallDepot ballDepot) {
 		super(display);

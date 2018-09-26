@@ -1,4 +1,4 @@
-package de.openhpi.capstone1.game.exceptions;
+package de.openhpi.capstone1.game.exception;
 
 public class BallDepotDepletedException extends Exception {
 

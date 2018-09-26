@@ -7,7 +7,7 @@ import de.openhpi.capstone1.game.controller.BallController;
 import de.openhpi.capstone1.game.controller.PaddleControllerStrategyLeft;
 import de.openhpi.capstone1.game.controller.PaddleControllerStrategyRight;
 import de.openhpi.capstone1.game.controller.TimerController;
-import de.openhpi.capstone1.game.exceptions.BallDepotDepletedException;
+import de.openhpi.capstone1.game.exception.BallDepotDepletedException;
 import de.openhpi.capstone1.game.model.Ball;
 import de.openhpi.capstone1.game.model.BallDepot;
 import de.openhpi.capstone1.game.model.GameField;

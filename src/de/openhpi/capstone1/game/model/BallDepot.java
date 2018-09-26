@@ -1,6 +1,6 @@
 package de.openhpi.capstone1.game.model;
 
-import de.openhpi.capstone1.game.exceptions.BallDepotDepletedException;
+import de.openhpi.capstone1.game.exception.BallDepotDepletedException;
 
 public class BallDepot extends PositionableElement {
 	

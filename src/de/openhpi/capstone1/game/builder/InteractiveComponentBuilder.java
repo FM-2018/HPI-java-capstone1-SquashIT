@@ -5,7 +5,7 @@ import java.text.MessageFormat;
 import processing.core.PApplet;
 
 public class InteractiveComponentBuilder {
-	public static final int GAME = 0x6A4E;
+	public static final int GAME = 0x6A4E; // constant used to select type of InteractiveComponent to build
 	
 	public static InteractiveComponent create(PApplet applet, int type) {
 		InteractiveComponent component;

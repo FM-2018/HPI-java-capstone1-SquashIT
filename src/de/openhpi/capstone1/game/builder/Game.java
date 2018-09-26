@@ -40,9 +40,7 @@ public class Game extends InteractiveComponent {
 	
 	private PaddleControllerStrategyRight paddleControlStratRight;
 	private PaddleControllerStrategyLeft paddleControlStratLeft;
-	
-	private BallController ballController;
-	
+	private BallController activeBallController;
 	private TimerController timerController;
 	
 	
@@ -55,11 +53,11 @@ public class Game extends InteractiveComponent {
 	public void update() {
 		if (gameActive) {
 			timerController.handleEvent();
-			ballController.handleEvent();			
+			activeBallController.handleEvent();			
 			
 			if (activeBall.getY() > gameField.getBallDeathLine()) {
 				// Kill the activeBall
-				ballController = null;
+				activeBallController = null;
 				views[views.length-1] = new BallView(display, new Ball(-200, -200, 10, 0, 0)); // activeBall view is always last element of views array. To kill current one, insert dummy view instead
 				activeBall = null;
 				
@@ -94,7 +92,7 @@ public class Game extends InteractiveComponent {
 						activeBall.setY(display.height/2);
 						
 						views[views.length-1] = new BallView(display, activeBall); // activeBall view is always last element of views array
-						ballController = new BallController(activeBall, paddle, gameField, 10, display.frameRate);
+						activeBallController = new BallController(activeBall, paddle, gameField, 10, display.frameRate);
 						
 						timer.resetTimer();
 						

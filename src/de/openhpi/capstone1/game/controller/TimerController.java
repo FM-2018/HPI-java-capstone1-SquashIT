@@ -4,9 +4,9 @@ import de.openhpi.capstone1.game.model.Timer;
 
 public class TimerController implements Controller {
 
-	Timer timer;
-	int framesTillHundrethIncrease;
-	int frameCount = 0;
+	private Timer timer;
+	private int framesTillHundrethIncrease;
+	private int frameCount = 0;
 	
 	public TimerController(Timer timer, float frameRate) {
 		this.timer = timer;

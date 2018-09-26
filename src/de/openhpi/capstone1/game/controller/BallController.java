@@ -6,10 +6,10 @@ import de.openhpi.capstone1.game.model.Paddle;
 
 public class BallController implements Controller {
 	
-	Ball ball;
-	Paddle paddle;
-	GameField gameField;
-	float framesTillSpeedUp;
+	private Ball ball;
+	private Paddle paddle;
+	private GameField gameField;
+	private float framesTillSpeedUp;
 	
 	public BallController(Ball ball, Paddle paddle, GameField gameField, float secondsTillSpeedUp, float frameRate) {
 		this.ball = ball;

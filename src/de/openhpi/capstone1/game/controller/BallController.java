@@ -35,11 +35,17 @@ public class BallController implements Controller {
 		float nextBallX = ball.getX() + ball.velocityX;
 		float nextBallY = ball.getY() + ball.velocityY;
 		
-		// TODO: what if ball collides with corner?
 		// TODO: when ball collides with paddle, it'll only change its y velocity, even though it should bounce off to the side 
 		
 		// CHECK WHETHER BALL WILL COLLIDE WITH ANYTHING AND PERFORM ACTIONS. ELSE JUST MOVE.
-		if (nextBallX < gameField.getLeftBound()) {
+		if ((nextBallX < gameField.getLeftBound() || nextBallX > gameField.getRightBound()) && nextBallY < gameField.getTopBound()) {
+			// Ball collides with corner.
+			// TODO: this may cause the ball to take a step too far, since both bounce methods also make a movement for the other coordinate respectively
+			float distanceTillBounceX = ball.getX() - gameField.getLeftBound();
+			float distanceTillBounceY = ball.getY() - gameField.getRightBound();
+			ball.bounceX(distanceTillBounceX);
+			ball.bounceY(distanceTillBounceY);
+		} else if (nextBallX < gameField.getLeftBound()) {
 			float distanceTillBounce = ball.getX() - gameField.getLeftBound();
 			ball.bounceX(distanceTillBounce);
 		} else if (nextBallX > gameField.getRightBound()) {

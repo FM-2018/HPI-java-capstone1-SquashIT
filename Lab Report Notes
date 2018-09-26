@@ -34,6 +34,7 @@
 	- no output at that point. Figure I have to implement other methods first, so I did
 	- did ball and paddle. seemed very easy.
 	- fixed an error in which I forgot to pass display into Game constructor. Game needs the display for drawing, building and calculating.
+
 - proceeded by adding input logic to Game class. Depending on which button pressed, call controllers
 - now implement controllers
 	- paddle controller strategy left, constructor to build actual controllers required
@@ -69,6 +70,7 @@
 	- changed all or at least most of the integers to floats
 	- then went for a gradual increase by SPEED_INCREASE/CRITICAL_FRAME_NUMBER
 	- realized I need to divide float by number, or else I won't get a proper floating point result
+
 - next, I just wanted to implement a timer so the player knows how long they've made it.
 	- again, model view controller pattern as per usual
 	- went for precision up to a tenth
@@ -83,6 +85,7 @@
 	- start with the latter. first of all, there is no ball. user has to press space bar in order to insert it.
 	- as already implemented, one ball is removed from the top of the depot and inserted into the game
 	- unfortunately, in order to deal with views array, had to create a dummy. That doesn't seem very clean to me. But it works.
+
 - now, I also want to make sure the timer is saved for later, because I want to display the best time on the game over screen
 	- extend Timer class a bit with static method to compare timers as well as method to export timer state as an int array
 	- save all that into an array list in Game class for later reference

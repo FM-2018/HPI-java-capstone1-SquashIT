@@ -168,7 +168,7 @@ public class Game extends InteractiveComponent {
 		int[] bestTime = Timer.findGreatestTime(timerResults);
 		GameOverScreen gameOverScreen = new GameOverScreen(bestTime);
 		
-		views[views.length-1] = new GameOverScreenView(display, gameOverScreen);
+		views = new AbstractView[] {new GameOverScreenView(display, gameOverScreen)};
 	}
 
 }

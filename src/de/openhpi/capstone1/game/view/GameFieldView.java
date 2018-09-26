@@ -25,7 +25,7 @@ public class GameFieldView extends AbstractView {
 		float leftVertLine = x - width/2;
 		float rightVertLine = x + width/2;
 		float topHorizLine = topDistance;
-		float bottomHorizLine = display.height+1; // Graphics designers hate him: make sure the border's stroke is not visible at the bottom with this simple trick! 
+		float bottomHorizLine = display.height; 
 		
 		// draw a rectangle defined by four points; namely where the lines intersect. Going counterclockwise, starting in the upper left corner.
 		display.quad(leftVertLine, topHorizLine, leftVertLine, bottomHorizLine, rightVertLine, bottomHorizLine, rightVertLine, topHorizLine);

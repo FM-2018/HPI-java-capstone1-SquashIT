@@ -6,9 +6,8 @@ public class Paddle extends PositionableElement {
 	public float boundaryLeft;
 	public float boundaryRight;
 	
-	public Paddle(float xPos, float yPos, float width, float height, float boundLeft, float boundRight) {
-		this.xPos = xPos;
-		this.yPos = yPos;
+	public Paddle(float x, float y, float width, float height, float boundLeft, float boundRight) {
+		super(x, y);
 		this.width = width;
 		this.height = height;
 		boundaryLeft = boundLeft;

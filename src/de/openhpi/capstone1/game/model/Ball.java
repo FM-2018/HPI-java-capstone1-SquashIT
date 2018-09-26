@@ -6,16 +6,14 @@ public class Ball extends PositionableElement {
 	public float velocityY;
 	
 	public Ball(float radius) {
-		xPos = 0;
-		yPos = 0;
+		super(0, 0);
 		velocityX = 0;
 		velocityY = 0;
 		this.radius = radius; 
 	}
 	
 	public Ball(float x, float y, float radius, float initialVelocityX, float initialVelocityY) {
-		xPos = x;
-		yPos = y;
+		super(x, y);
 		this.radius = radius;
 		velocityX = initialVelocityX;
 		velocityY = initialVelocityY;

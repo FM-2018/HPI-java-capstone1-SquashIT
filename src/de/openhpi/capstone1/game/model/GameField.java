@@ -6,9 +6,9 @@ public class GameField extends PositionableElement {
 	private float ballDeathLine;
 	
 	public GameField(float x, float width, float distanceWindowTop, float ballDeathLine) {
+		super(x, 0);
 		this.width = width;
 		this.distanceWindowTop = distanceWindowTop;
-		xPos = x;
 		this.ballDeathLine = ballDeathLine;
 	}
 	

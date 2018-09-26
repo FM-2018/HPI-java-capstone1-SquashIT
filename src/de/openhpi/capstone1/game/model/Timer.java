@@ -9,8 +9,7 @@ public class Timer extends PositionableElement {
 	public float size;
 	
 	public Timer(float x, float y, float size) {
-		xPos = x;
-		yPos = y;
+		super(x, y);
 		this.size = size;
 	}
 	

@@ -12,10 +12,9 @@ public class BallDepot extends PositionableElement {
 	private float width;
 	
 	public BallDepot(float x, float y, float width, float height, Ball[] balls) {
+		super(x, y);
 		this.balls = balls;
 		ballAmountLeft = balls.length;
-		xPos = x;
-		yPos = y;
 		this.width = width;
 		this.height = height;
 		

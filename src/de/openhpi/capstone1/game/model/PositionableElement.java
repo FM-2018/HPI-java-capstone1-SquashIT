@@ -4,6 +4,11 @@ public abstract class PositionableElement {
 	float xPos;
 	float yPos;
 	
+	public PositionableElement(float x, float y) {
+		xPos = x;
+		yPos = y;
+	}
+	
 	public float getX() {
 		return xPos;
 	}

@@ -81,8 +81,10 @@ public class Game extends InteractiveComponent {
 			case ' ':
 				if (!gameActive) {
 					try {
-						float INIT_BALL_VELOCITY_X = ThreadLocalRandom.current().nextInt(1, 2+1); // randomize activeBall's velocities
-						float INIT_BALL_VELOCITY_Y = ThreadLocalRandom.current().nextInt(1, 2+1);
+//						float INIT_BALL_VELOCITY_X = ThreadLocalRandom.current().nextInt(1, 2+1); // randomize activeBall's velocities
+//						float INIT_BALL_VELOCITY_Y = ThreadLocalRandom.current().nextInt(1, 2+1);
+						float INIT_BALL_VELOCITY_X = 0;
+						float INIT_BALL_VELOCITY_Y = 1;
 						
 						activeBall = ballDepot.getNextBall();
 						activeBall.velocityX = INIT_BALL_VELOCITY_X;
